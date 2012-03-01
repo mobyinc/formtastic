@@ -39,7 +39,7 @@ module Formtastic
         end
 
         def label_from_options
-          options[:label]
+          options[:label].html_safe
         end
 
         def localized_label
