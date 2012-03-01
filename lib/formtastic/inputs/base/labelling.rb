@@ -11,10 +11,12 @@ module Formtastic
         
         def label_html_options
           # opts = options_for_label(options) # TODO
-          opts = {}
+          opts = {}          
           opts[:for] ||= input_html_options[:id]
           opts[:class] = [opts[:class]]
           opts[:class] << 'label'
+          
+          opts[:class] << input_html_options[:label_class] unless input_html_options[:label_class].nil?
           
           opts
         end

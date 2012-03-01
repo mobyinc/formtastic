@@ -26,7 +26,7 @@ module Formtastic
             end
           opts[:class] << as
           opts[:class] << "input"
-          opts[:class] << "error" if errors?
+          opts[:class] << "form-field error" if errors?
           opts[:class] << "optional" if optional?
           opts[:class] << "required" if required?
           opts[:class] << "autofocus" if autofocus?
