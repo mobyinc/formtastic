@@ -51,8 +51,8 @@ module Formtastic
         full_errors.compact!
         return nil if full_errors.blank?
         html_options[:class] ||= "errors"
-        template.content_tag(:ul, html_options) do
-          Formtastic::Util.html_safe(full_errors.map { |error| template.content_tag(:li, Formtastic::Util.html_safe(error)) }.join)
+        template.content_tag(:div, html_options) do
+          Formtastic::Util.html_safe(full_errors.map { |error| template.content_tag(:p, Formtastic::Util.html_safe(error), :class => "error") }.join)
         end
       end
       
